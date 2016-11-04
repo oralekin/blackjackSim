@@ -7,7 +7,9 @@ deste = ["S01", "S02", "S03", "S04", "S05", "S06", "S07", "S08", "S09", "S10", "
 # Sinek Karo Kupa Maça
 
 distaki = []
-
+class Kart:
+    @staticmethod
+    def kartcek(self):
 
 def karistir(listt, ite):
     for _ in range(1, ite):
