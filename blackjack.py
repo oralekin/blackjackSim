@@ -18,18 +18,16 @@ class PlayerDefs:
     def toplamhesabı(self):
         self.toplam = 0
         for kart in self.el:
-            self.toplam += Kart.deger(kart)
+            self.toplam += PlayerDefs.deger(kart)
         return self.toplam
 
-    def kartcek(playernaem, deste):
-        playernaem.el.append(deste[-1])
+    def kartcek(self, deste):
+        self.el.append(deste[-1])
         del deste[-1]
 
     @staticmethod
     def deger(kart):
         return int(kart[1] + kart[2])
-
-
 
 
 player = PlayerDefs()
@@ -48,12 +46,15 @@ def karistir(listt, ite):
     return listt + distaki
 
 
-deste = karistir(dest, 7)
+deste = karistir(jokersizdeste, 7)
 PlayerDefs.kartcek(player, deste)
-Kart.kartcek(computer, deste)
-Kart.kartcek(player, deste)
-Kart.kartcek(computer, deste)
-print(player.el)
+PlayerDefs.kartcek(computer, deste)
+PlayerDefs.kartcek(player, deste)
+PlayerDefs.kartcek(computer, deste)
+while player.toplam != 21 or computer.toplam != 21:
+    ekran("ask")
 
+
+print(player.el)
 
 print(123)
