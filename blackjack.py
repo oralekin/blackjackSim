@@ -4,10 +4,10 @@ jokersizdeste = ["S01", "S02", "S03", "S04", "S05", "S06", "S07", "S08", "S09", 
                  "K01", "K02", "K03", "K04", "K05", "K06", "K07", "K08", "K09", "K10", "K11", "K12", "K13",
                  "Q01", "Q02", "Q03", "Q04", "Q05", "Q06", "Q07", "Q08", "Q09", "Q10", "Q11", "Q12", "Q13",
                  "M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10", "M11", "M12", "M13"]
-# Sinek Karo Kupa Maça
+#                 Sinek Karo Kupa Maça
 
 distaki = []
-deste = []
+
 
 class PlayerDefs:
     def __init__(self):
@@ -21,9 +21,6 @@ class PlayerDefs:
             self.toplam += Kart.deger(kart)
         return self.toplam
 
-
-class Kart:
-    @staticmethod
     def kartcek(playernaem, deste):
         playernaem.el.append(deste[-1])
         del deste[-1]
@@ -31,6 +28,9 @@ class Kart:
     @staticmethod
     def deger(kart):
         return int(kart[1] + kart[2])
+
+
+
 
 player = PlayerDefs()
 computer = PlayerDefs()
@@ -48,14 +48,12 @@ def karistir(listt, ite):
     return listt + distaki
 
 
-def runprog(destestart):
-    deste = karistir(destestart, 7)
-    Kart.kartcek(player, deste)
-    Kart.kartcek(computer, deste)
-    Kart.kartcek(player, deste)
-    Kart.kartcek(computer, deste)
-    print(player.el)
+deste = karistir(dest, 7)
+PlayerDefs.kartcek(player, deste)
+Kart.kartcek(computer, deste)
+Kart.kartcek(player, deste)
+Kart.kartcek(computer, deste)
+print(player.el)
 
 
-runprog(jokersizdeste)
 print(123)
